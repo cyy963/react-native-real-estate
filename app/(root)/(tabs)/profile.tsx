@@ -32,7 +32,7 @@ const SettingsItem = ({
 }: SettingsItemProp) => (
   <TouchableOpacity
     onPress={onPress}
-    className="flex flex-row items-center justify-between py-3"
+    className="flex flex-row items-center justify-between py-2.5"
   >
     <View className="flex flex-row items-center gap-3">
       <Image source={icon} className="size-6" />
@@ -64,12 +64,12 @@ const Profile = () => {
         showsVerticalScrollIndicator={false}
         contentContainerClassName="pb-32 px-7"
       >
-        <View className="flex flex-row items-center justify-between mt-5">
+        <View className="flex flex-row items-center justify-between mt-4">
           <Text className="text-xl font-rubik-bold">Profile</Text>
           <Image source={icons.bell} className="size-5" />
         </View>
 
-        <View className="flex flex-row justify-center mt-5">
+        <View className="flex flex-row justify-center mt-3">
           <View className="flex flex-col items-center relative mt-5">
             <Image
               source={{ uri: user?.avatar }}
@@ -83,18 +83,18 @@ const Profile = () => {
           </View>
         </View>
 
-        <View className="flex flex-col mt-10">
+        <View className="flex flex-col mt-8">
           <SettingsItem icon={icons.calendar} title="My Bookings" />
           <SettingsItem icon={icons.wallet} title="Payments" />
         </View>
 
-        <View className="flex flex-col mt-5 border-t pt-5 border-primary-200">
+        <View className="flex flex-col mt-4 border-t pt-5 border-primary-200">
           {settings.slice(2).map((item, index) => (
             <SettingsItem key={index} {...item} />
           ))}
         </View>
 
-        <View className="flex flex-col border-t mt-5 pt-5 border-primary-200">
+        <View className="flex flex-col border-t mt-4 pt-5 border-primary-200">
           <SettingsItem
             icon={icons.logout}
             title="Logout"
